@@ -3,9 +3,9 @@ import json
 from pyaxmlparser import APK
 
 def create_manifest_for_category(category_name, base_url, output_path):
-    """Scans a directory for APKs and generates a manifest.json file."""
+    """Scans a directory for APKs and generates a manifest file."""
     app_list = []
-    print(f"\nScanning category: {category_name}...")
+    print(f"\nScanning category: '{category_name}'...")
 
     if not os.path.isdir(category_name):
         print(f"Directory '{category_name}' not found. Skipping.")
@@ -18,63 +18,68 @@ def create_manifest_for_category(category_name, base_url, output_path):
         print(f"Created '{icons_dir}' directory.")
 
     for filename in sorted(os.listdir(category_name)):
-        if filename.endswith(".apk"):
+        if filename.lower().endswith(".apk"):
             filepath = os.path.join(category_name, filename)
             try:
                 apk = APK(filepath)
                 
-                if not apk.package or not apk.package.strip():
-                    print(f"  [!] Skipping {filename}: Invalid package name.")
+                if not all([apk.package, apk.application, apk.version_name, apk.version_code]):
+                    print(f"  [!] Skipping {filename}: Missing essential info (package, name, or version).")
                     continue
-                
-                print(f"  [+] Processing: {apk.application} ({apk.package})")
-                
-                # --- NEW AND IMPROVED ICON EXTRACTION ---
-                try:
-                    # Use the official method to get the icon path
-                    icon_path_in_apk = apk.get_app_icon()
 
-                    if icon_path_in_apk:
-                        output_icon_path = os.path.join(icons_dir, f"{apk.package}.png")
-                        icon_data = apk.get_file(icon_path_in_apk)
-                        with open(output_icon_path, 'wb') as f:
-                            f.write(icon_data)
-                        print(f"    - Icon extracted successfully.")
-                    else:
-                        print(f"    - WARNING: Icon path not found inside the APK.")
-                except Exception as icon_e:
-                    print(f"    - WARNING: Could not extract icon. Reason: {icon_e}")
-
-                # -------------------------------------------
+                print(f"  [+] Processing: {apk.application} (v{apk.version_name})")
+                
+                # We need a placeholder URL for the icon. The app will load it from the remote URL.
+                icon_url_for_json = f"{base_url}/icons/{apk.package}.png"
+                extract_icon(apk, "icons") # This saves the icon locally for upload.
 
                 app_info = {
                     "appName": apk.application,
                     "packageName": apk.package,
                     "size": os.path.getsize(filepath),
-                    "iconUrl": f"{base_url}/icons/{apk.package}.png",
-                    "apkUrl": f"{base_url}/{category_name}/{filename}"
+                    # Important: these are URLs for the app to download from
+                    "iconUrl": icon_url_for_json,
+                    "apkUrl": f"{base_url}/{category_name}/{filename}",
+                    # These are just for info, not used by the app in this version
+                    "versionName": apk.version_name, 
+                    "versionCode": int(apk.version_code)
                 }
                 app_list.append(app_info)
-                
+
             except Exception as e:
                 print(f"  [!] CRITICAL ERROR processing {filename}: {e}")
                 
-    # Write the JSON manifest file
-    manifest_file_path = os.path.join(output_path, f"{category_name}_manifest.json")
+    manifest_file_path = os.path.join(output_path, f"{category_name}.json")
     with open(manifest_file_path, 'w', encoding='utf-8') as f:
         json.dump(app_list, f, indent=2, ensure_ascii=False)
         
     print(f"\nManifest for '{category_name}' created successfully at {manifest_file_path}")
 
+def extract_icon(apk, output_dir):
+    """Extracts the APK's icon and saves it as a PNG."""
+    try:
+        icon_path_in_apk = apk.get_app_icon()
+        if not icon_path_in_apk:
+            print(f"    - WARNING: Icon not found for {apk.package}")
+            return
+        
+        output_icon_path = os.path.join(output_dir, f"{apk.package}.png")
+        icon_data = apk.get_file(icon_path_in_apk)
+        with open(output_icon_path, 'wb') as f:
+            f.write(icon_data)
+    except Exception as e:
+        print(f"    - WARNING: Could not extract icon for {apk.package}: {e}")
+
+
 if __name__ == '__main__':
-    # !!! These details must match your GitHub repository !!!
+    # These details must match your GitHub repository
     GITHUB_USERNAME = "ASDFG0537701349"
     GITHUB_REPOSITORY = "770kosher-app-apks"
     BRANCH = "main"
-
     RAW_BASE_URL = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/{BRANCH}"
     
-    OUTPUT_DIR = "manifests"
+    # Create the output directory if it doesn't exist
+    OUTPUT_DIR = "listings"
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
 
@@ -83,5 +88,5 @@ if __name__ == '__main__':
     create_manifest_for_category("games", RAW_BASE_URL, OUTPUT_DIR)
     
     print("\n----------------------------------------------------")
-    print("All done! Remember to commit and push the 'manifests' and 'icons' folders to your repository.")
+    print("All done! Now, commit and push your changes.")
     print("----------------------------------------------------")

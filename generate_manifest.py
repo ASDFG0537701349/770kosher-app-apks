@@ -1,5 +1,6 @@
 import os
 import json
+from urllib.parse import quote
 from pyaxmlparser import APK
 
 def create_manifest_for_category(category_name, base_url, output_path):
@@ -29,9 +30,13 @@ def create_manifest_for_category(category_name, base_url, output_path):
 
                 print(f"  [+] Processing: {apk.application} (v{apk.version_name})")
                 
-                # We need a placeholder URL for the icon. The app will load it from the remote URL.
-                icon_url_for_json = f"{base_url}/icons/{apk.package}.png"
+                # Encode the icon package name for the URL
+                encoded_icon_filename = quote(f"{apk.package}.png")
+                icon_url_for_json = f"{base_url}/icons/{encoded_icon_filename}"
                 extract_icon(apk, "icons") # This saves the icon locally for upload.
+                
+                # *** התיקון הקריטי כאן: קידוד שם קובץ ה-APK עבור ה-URL ***
+                encoded_apk_filename = quote(filename)
 
                 app_info = {
                     "appName": apk.application,
@@ -39,7 +44,7 @@ def create_manifest_for_category(category_name, base_url, output_path):
                     "size": os.path.getsize(filepath),
                     # Important: these are URLs for the app to download from
                     "iconUrl": icon_url_for_json,
-                    "apkUrl": f"{base_url}/{category_name}/{filename}",
+                    "apkUrl": f"{base_url}/{category_name}/{encoded_apk_filename}", # שימוש בשם המקודד
                     # These are just for info, not used by the app in this version
                     "versionName": apk.version_name, 
                     "versionCode": int(apk.version_code)

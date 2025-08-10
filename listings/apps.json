@@ -45,6 +45,42 @@
     "versionCode": 21
   },
   {
+    "appName": "Aptoide",
+    "packageName": "cm.aptoide.pt",
+    "size": 20072145,
+    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/cm.aptoide.pt.png",
+    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/chat-google-llc.apk",
+    "versionName": "9.22.5.3",
+    "versionCode": 12060
+  },
+  {
+    "appName": "Aptoide",
+    "packageName": "cm.aptoide.pt",
+    "size": 20072145,
+    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/cm.aptoide.pt.png",
+    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/foto-google.apk",
+    "versionName": "9.22.5.3",
+    "versionCode": 12060
+  },
+  {
+    "appName": "Aptoide",
+    "packageName": "cm.aptoide.pt",
+    "size": 20072145,
+    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/cm.aptoide.pt.png",
+    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/gmail.apk",
+    "versionName": "9.22.5.3",
+    "versionCode": 12060
+  },
+  {
+    "appName": "Aptoide",
+    "packageName": "cm.aptoide.pt",
+    "size": 20072145,
+    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/cm.aptoide.pt.png",
+    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/google-inc-messenger.apk",
+    "versionName": "9.22.5.3",
+    "versionCode": 12060
+  },
+  {
     "appName": "Image Compressor",
     "packageName": "com.appsuite.hasib.photocompressorandresizer",
     "size": 28729841,
@@ -90,6 +126,15 @@
     "versionCode": 73
   },
   {
+    "appName": "Moovit",
+    "packageName": "com.tranzmate",
+    "size": 52699154,
+    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/com.tranzmate.png",
+    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/moovit_51070560__-.apk",
+    "versionName": "5.107.0.560",
+    "versionCode": 560
+  },
+  {
     "appName": "Photo Editor",
     "packageName": "com.iudesk.android.photo.editor",
     "size": 7679480,
@@ -106,6 +151,15 @@
     "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/power_shade_v17.6-1706000-_src-1.apk",
     "versionName": "17.6",
     "versionCode": 1706000
+  },
+  {
+    "appName": "Aptoide",
+    "packageName": "cm.aptoide.pt",
+    "size": 20072145,
+    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/cm.aptoide.pt.png",
+    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/terjemahan-google.apk",
+    "versionName": "9.22.5.3",
+    "versionCode": 12060
   },
   {
     "appName": "Waze",

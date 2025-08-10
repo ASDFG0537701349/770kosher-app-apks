@@ -1,5 +1,23 @@
 [
   {
+    "appName": "ChatGPT",
+    "packageName": "com.openai.chatgpt",
+    "size": 42133259,
+    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/com.openai.chatgpt.png",
+    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/ChatGPT 1.2025.140.apk",
+    "versionName": "1.2025.140",
+    "versionCode": 2514011
+  },
+  {
+    "appName": "Gboard",
+    "packageName": "com.google.android.inputmethod.latin",
+    "size": 82372181,
+    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/com.google.android.inputmethod.latin.png",
+    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/Gboard 15.2.08.736047990-release-arm64-v8a.apk",
+    "versionName": "15.2.08.736047990-release-arm64-v8a",
+    "versionCode": 165480334
+  },
+  {
     "appName": "KaraokeBox",
     "packageName": "io.jkhddev.music_player",
     "size": 54568330,
@@ -45,13 +63,13 @@
     "versionCode": 21
   },
   {
-    "appName": "Gboard",
-    "packageName": "com.google.android.inputmethod.latin",
-    "size": 84730819,
-    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/com.google.android.inputmethod.latin.png",
-    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/base.apk",
-    "versionName": "15.7.4.787916401-release-arm64-v8a",
-    "versionCode": 175146042
+    "appName": "Translate",
+    "packageName": "com.google.android.apps.translate",
+    "size": 44421007,
+    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/com.google.android.apps.translate.png",
+    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/Translate 9.8.106.755281934.2-release.apk",
+    "versionName": "9.8.106.755281934.2-release",
+    "versionCode": 699881122
   },
   {
     "appName": "Photos",
@@ -142,6 +160,15 @@
     "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/power_shade_v17.6-1706000-_src-1.apk",
     "versionName": "17.6",
     "versionCode": 1706000
+  },
+  {
+    "appName": "בנק דיסקונט",
+    "packageName": "com.ideomobile.discount",
+    "size": 73404905,
+    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/com.ideomobile.discount.png",
+    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/בנק דיסקונט 90.0.3.apk",
+    "versionName": "90.0.3",
+    "versionCode": 5361
   },
   {
     "appName": "Waze",

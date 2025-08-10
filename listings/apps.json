@@ -45,40 +45,31 @@
     "versionCode": 21
   },
   {
-    "appName": "Aptoide",
-    "packageName": "cm.aptoide.pt",
-    "size": 20072145,
-    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/cm.aptoide.pt.png",
-    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/chat-google-llc.apk",
-    "versionName": "9.22.5.3",
-    "versionCode": 12060
+    "appName": "Gboard",
+    "packageName": "com.google.android.inputmethod.latin",
+    "size": 84730819,
+    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/com.google.android.inputmethod.latin.png",
+    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/base.apk",
+    "versionName": "15.7.4.787916401-release-arm64-v8a",
+    "versionCode": 175146042
   },
   {
-    "appName": "Aptoide",
-    "packageName": "cm.aptoide.pt",
-    "size": 20072145,
-    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/cm.aptoide.pt.png",
-    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/foto-google.apk",
-    "versionName": "9.22.5.3",
-    "versionCode": 12060
+    "appName": "Photos",
+    "packageName": "com.google.android.apps.photos",
+    "size": 107883964,
+    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/com.google.android.apps.photos.png",
+    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/com.google.android.apps.photos_7.40.0.792701077-50548065_minAPI23(armeabi-v7a)(nodpi)_apkmirror.com.apk",
+    "versionName": "7.40.0.792701077",
+    "versionCode": 50548065
   },
   {
-    "appName": "Aptoide",
-    "packageName": "cm.aptoide.pt",
-    "size": 20072145,
-    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/cm.aptoide.pt.png",
-    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/gmail.apk",
-    "versionName": "9.22.5.3",
-    "versionCode": 12060
-  },
-  {
-    "appName": "Aptoide",
-    "packageName": "cm.aptoide.pt",
-    "size": 20072145,
-    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/cm.aptoide.pt.png",
-    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/google-inc-messenger.apk",
-    "versionName": "9.22.5.3",
-    "versionCode": 12060
+    "appName": "Gmail",
+    "packageName": "com.google.android.gm",
+    "size": 174231436,
+    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/com.google.android.gm.png",
+    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/gmail-2025-08-04-792359290-release.apk",
+    "versionName": "2025.08.04.792359290.Release",
+    "versionCode": 65273008
   },
   {
     "appName": "Image Compressor",
@@ -151,15 +142,6 @@
     "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/power_shade_v17.6-1706000-_src-1.apk",
     "versionName": "17.6",
     "versionCode": 1706000
-  },
-  {
-    "appName": "Aptoide",
-    "packageName": "cm.aptoide.pt",
-    "size": 20072145,
-    "iconUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/icons/cm.aptoide.pt.png",
-    "apkUrl": "https://raw.githubusercontent.com/ASDFG0537701349/770kosher-app-apks/main/apps/terjemahan-google.apk",
-    "versionName": "9.22.5.3",
-    "versionCode": 12060
   },
   {
     "appName": "Waze",

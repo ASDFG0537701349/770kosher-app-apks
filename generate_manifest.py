@@ -4,6 +4,7 @@ from urllib.parse import quote
 from pyaxmlparser import APK
 
 def create_manifest_for_category(category_name, base_url, output_path):
+    # ... (כל תוכן המתודה נשאר זהה לחלוטין)
     """Scans a directory for APKs and generates a manifest file."""
     app_list = []
     print(f"\nScanning category: '{category_name}'...")
@@ -33,19 +34,16 @@ def create_manifest_for_category(category_name, base_url, output_path):
                 # Encode the icon package name for the URL
                 encoded_icon_filename = quote(f"{apk.package}.png")
                 icon_url_for_json = f"{base_url}/icons/{encoded_icon_filename}"
-                extract_icon(apk, "icons") # This saves the icon locally for upload.
-                
-                # *** התיקון הקריטי כאן: קידוד שם קובץ ה-APK עבור ה-URL ***
+                extract_icon(apk, "icons")
+
                 encoded_apk_filename = quote(filename)
 
                 app_info = {
                     "appName": apk.application,
                     "packageName": apk.package,
                     "size": os.path.getsize(filepath),
-                    # Important: these are URLs for the app to download from
                     "iconUrl": icon_url_for_json,
-                    "apkUrl": f"{base_url}/{category_name}/{encoded_apk_filename}", # שימוש בשם המקודד
-                    # These are just for info, not used by the app in this version
+                    "apkUrl": f"{base_url}/{category_name}/{encoded_apk_filename}",
                     "versionName": apk.version_name, 
                     "versionCode": int(apk.version_code)
                 }
@@ -61,6 +59,7 @@ def create_manifest_for_category(category_name, base_url, output_path):
     print(f"\nManifest for '{category_name}' created successfully at {manifest_file_path}")
 
 def extract_icon(apk, output_dir):
+    # ... (כל תוכן המתודה נשאר זהה לחלוטין)
     """Extracts the APK's icon and saves it as a PNG."""
     try:
         icon_path_in_apk = apk.get_app_icon()
@@ -81,16 +80,17 @@ if __name__ == '__main__':
     GITHUB_USERNAME = "ASDFG0537701349"
     GITHUB_REPOSITORY = "770kosher-app-apks"
     BRANCH = "main"
-    RAW_BASE_URL = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/{BRANCH}"
     
-    # Create the output directory if it doesn't exist
+    # *** התיקון הקריטי כאן: שינוי הדומיין ***
+    MEDIA_BASE_URL = f"https://media.githubusercontent.com/media/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/{BRANCH}"
+    
     OUTPUT_DIR = "listings"
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
 
-    # Process both categories
-    create_manifest_for_category("apps", RAW_BASE_URL, OUTPUT_DIR)
-    create_manifest_for_category("games", RAW_BASE_URL, OUTPUT_DIR)
+    # Process both categories using the new base URL
+    create_manifest_for_category("apps", MEDIA_BASE_URL, OUTPUT_DIR)
+    create_manifest_for_category("games", MEDIA_BASE_URL, OUTPUT_DIR)
     
     print("\n----------------------------------------------------")
     print("All done! Now, commit and push your changes.")
